@@ -1,0 +1,31 @@
+{
+  "employees": [
+    {
+      "name": "Alfa Nadya Maimanah",
+      "email": "alfanadya@gmail.com",
+      "phone": "082314563738",
+      "gender": "Female",
+      "designation": "UI/UX Designer",
+      "city": "Yogyakarta",
+      "id": 1
+    },
+    {
+      "name": "Namira Salma Fakhira",
+      "email": "namirasalma@gmail.com",
+      "phone": "08234156786",
+      "gender": "Female",
+      "designation": "Project Manager",
+      "city": "Bandung",
+      "id": 2
+    },
+    {
+      "name": "Alexandra Woodward",
+      "email": "xequtosyk@mailinator.com",
+      "phone": "+1 (281) 583-3929",
+      "gender": "Male",
+      "designation": "Software Engineer",
+      "city": "Semarang",
+      "id": 3
+    }
+  ]
+}
