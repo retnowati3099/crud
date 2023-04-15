@@ -6,7 +6,7 @@
       "phone": "082314563738",
       "gender": "Female",
       "designation": "UI/UX Designer",
-      "city": "Yogyakarta",
+      "city": "Bandung",
       "id": 1
     },
     {
@@ -26,6 +26,159 @@
       "designation": "Software Engineer",
       "city": "Semarang",
       "id": 3
+    },
+    {
+      "name": "Quinn Sandoval",
+      "email": "xotuti@mailinator.com",
+      "phone": "+1 (655) 658-4594",
+      "gender": "Male",
+      "designation": "Ex facilis reprehend",
+      "city": "Jakarta",
+      "id": 4
+    },
+    {
+      "name": "Tanya Stewart",
+      "email": "kebitaj@mailinator.com",
+      "phone": "+1 (658) 768-5592",
+      "gender": "Male",
+      "designation": "PM",
+      "city": "Jakarta",
+      "id": 5
+    },
+    {
+      "name": "Malcolm Gaines",
+      "email": "wyqebyto@mailinator.com",
+      "phone": "+1 (149) 839-4733",
+      "gender": "Female",
+      "designation": "Accounting",
+      "city": "Jakarta",
+      "id": 6
+    },
+    {
+      "name": "Tamekah Carroll",
+      "email": "pavyt@mailinator.com",
+      "phone": "+1 (212) 809-2174",
+      "gender": "Male",
+      "designation": "HR Manager",
+      "city": "Surabaya",
+      "id": 7
+    },
+    {
+      "name": "Riska Amalia",
+      "email": "vakygepylu@mailinator.com",
+      "phone": "+1 (127) 981-1822",
+      "gender": "Female",
+      "designation": "Quis ullam et volupt",
+      "city": "Yoyakarta",
+      "id": 8
+    },
+    {
+      "name": "Cassandra Rutledge",
+      "email": "vidufe@mailinator.com",
+      "phone": "+1 (205) 325-3287",
+      "gender": "Female",
+      "designation": "Illum culpa similiq",
+      "city": "Serang",
+      "id": 9
+    },
+    {
+      "name": "Animi lorem quos il",
+      "email": "duxigupe@mailinator.com",
+      "phone": "+1 (852) 771-5401",
+      "gender": "Female",
+      "designation": "Fugiat ab ut est mo",
+      "city": "Atque cillum ad temp",
+      "id": 10
+    },
+    {
+      "name": "Tempore ea nostrud ",
+      "email": "xasawe@mailinator.com",
+      "phone": "+1 (899) 446-2001",
+      "gender": "Male",
+      "designation": "Quidem molestias lab",
+      "city": "Suscipit officiis qu",
+      "id": 11
+    },
+    {
+      "name": "Duis enim aperiam si",
+      "email": "ruxix@mailinator.com",
+      "phone": "+1 (356) 406-7247",
+      "gender": "Female",
+      "designation": "Mollit deleniti iust",
+      "city": "Voluptatum deleniti ",
+      "id": 12
+    },
+    {
+      "name": "Velit libero quia q",
+      "email": "dywaxaw@mailinator.com",
+      "phone": "+1 (491) 269-6661",
+      "gender": "Male",
+      "designation": "Odit culpa cillum q",
+      "city": "Rem accusamus reicie",
+      "id": 13
+    },
+    {
+      "name": "Voluptatum ullamco v",
+      "email": "nogi@mailinator.com",
+      "phone": "+1 (554) 217-8443",
+      "gender": "Male",
+      "designation": "Vitae ea labore aspe",
+      "city": "Molestias non et id",
+      "id": 14
+    },
+    {
+      "name": "Expedita porro vitae",
+      "email": "tiliwu@mailinator.com",
+      "phone": "+1 (838) 152-4519",
+      "gender": "Female",
+      "designation": "Nam qui in asperiore",
+      "city": "Ipsum mollitia culpa",
+      "id": 15
+    },
+    {
+      "name": "Incididunt deserunt ",
+      "email": "byveceve@mailinator.com",
+      "phone": "+1 (488) 271-5569",
+      "gender": "Male",
+      "designation": "Quisquam magna quide",
+      "city": "Quia ipsam velit vol",
+      "id": 16
+    },
+    {
+      "name": "Incidunt et delenit",
+      "email": "myjigajeb@mailinator.com",
+      "phone": "+1 (565) 552-6675",
+      "gender": "Female",
+      "designation": "Nam cupiditate amet",
+      "city": "Consequatur eaque qu",
+      "id": 17
+    },
+    {
+      "name": "Praesentium id minus",
+      "email": "mihocidufu@mailinator.com",
+      "phone": "+1 (516) 931-7108",
+      "gender": "Female",
+      "designation": "Illo et dolor quia i",
+      "city": "Accusamus sed eius v",
+      "id": 18
+    },
+    {
+      "name": "Sunt quasi possimus",
+      "email": "logyryryw@mailinator.com",
+      "phone": "+1 (911) 499-2071",
+      "gender": "Male",
+      "designation": "Non voluptatem volu",
+      "city": "Consequat Nulla sun",
+      "id": 19
+    },
+    {
+      "name": "Qui ipsam ad ut iste",
+      "email": "damakis@mailinator.com",
+      "phone": "+1 (556) 538-9832",
+      "gender": "Male",
+      "designation": "Non vel ut temporibu",
+      "city": "Maiores est et non o",
+      "id": 20
     }
   ]
 }

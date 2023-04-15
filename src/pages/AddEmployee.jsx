@@ -1,13 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
-const EditEmployee = () => {
-  //useParam react hook untuk mengakses parameter id route yang sesuai
-  const { id } = useParams();
-
-  // deklarasi hook
-  const [update, setUpdate] = useState({
+const AddEmployee = () => {
+  // deklarasi useState() hook
+  const [employee, setEmployee] = useState({
     name: "",
     email: "",
     phone: "",
@@ -16,44 +13,38 @@ const EditEmployee = () => {
     city: "",
   });
 
+  useEffect(() => {
+    document.title = "Add Employee";
+  }, []);
+
   // useNavigate
   const nav = useNavigate();
 
-  // method get request untuk mengambil data dari json server
-  const getRequest = () => {
+  // method post request untuk menambah data
+  const postRequest = () => {
     axios
-      .get(`http://localhost:8080/employees/${id}`)
+      .post(
+        `http://192.168.194.36:5000/api/employeeApp/create/employee`,
+        employee
+      )
+      //.post(`http://192.168.1.60:5000/employee`, employee)
       .then((res) => {
-        setUpdate(res.data);
+        // menghandle ketika sukses menambah data employee
+        console.log(res.data);
+        alert("The data has been successfully saved!");
+        nav("/"); // ketika data telah berhasil ditambahkan, langsung dinavigasikan ke halaman home
       })
       .catch((err) => {
         console.log(err);
-      });
-  };
-
-  // useEffect
-  useEffect(() => {
-    getRequest();
-  }, [id]);
-
-  //method patch untuk mengupdate data
-  const patchRequest = () => {
-    axios
-      .patch(`http://localhost:8080/employees/${id}`, update)
-      .then(() => {
-        alert("The data is updated!");
-        nav("/");
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("The data is failed to be updated!");
+        alert("The data failed to save!");
+        //alert(err.message);
       });
   };
 
   // handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    patchRequest();
+    postRequest();
   };
 
   return (
@@ -63,43 +54,46 @@ const EditEmployee = () => {
           <form onSubmit={handleSubmit}>
             <div className="card">
               <div className="card-header">
-                <h2 className="text-center">Edit Employee</h2>
+                <h3 className="text-center">Add Employee</h3>
               </div>
               <div className="card-body">
                 <div className="form-group mb-3">
                   <label htmlFor="name">Name:</label>
                   <input
                     type="text"
-                    value={update.name || ""}
+                    placeholder="Enter name"
                     id="name"
                     className="form-control"
                     onChange={(e) =>
-                      setUpdate({ ...update, name: e.target.value })
+                      setEmployee({ ...employee, name: e.target.value })
                     }
+                    required
                   />
                 </div>
                 <div className="form-group mb-3">
                   <label htmlFor="email">Email:</label>
                   <input
                     type="text"
-                    value={update.email || ""}
+                    placeholder="Enter email"
                     id="email"
                     className="form-control"
                     onChange={(e) => {
-                      setUpdate({ ...update, email: e.target.value });
+                      setEmployee({ ...employee, email: e.target.value });
                     }}
+                    required
                   />
                 </div>
                 <div className="form-group mb-3">
                   <label htmlFor="phone">Phone:</label>
                   <input
                     type="text"
-                    value={update.phone}
+                    placeholder="Enter phone"
                     id="phone"
                     className="form-control"
                     onChange={(e) => {
-                      setUpdate({ ...update, phone: e.target.value });
+                      setEmployee({ ...employee, phone: e.target.value });
                     }}
+                    required
                   />
                 </div>
                 <div className="form-group mb-3">
@@ -108,27 +102,26 @@ const EditEmployee = () => {
                     id="gender"
                     className="form-select"
                     onChange={(e) =>
-                      setUpdate({ ...update, gender: e.target.value })
+                      setEmployee({ ...employee, gender: e.target.value })
                     }
-                    value={update.gender}
+                    required
                   >
-                    <option selected disabled value>
-                      --Select Gender--
-                    </option>
-                    <option>Female</option>
-                    <option>Male</option>
+                    {/* <option>--Select Gender--</option> */}
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
                   </select>
                 </div>
                 <div className="form-group mb-3">
                   <label htmlFor="designation">Designation:</label>
                   <input
                     type="text"
-                    value={update.designation || ""}
+                    placeholder="Enter designation"
                     id="designation"
                     className="form-control"
                     onChange={(e) => {
-                      setUpdate({ ...update, designation: e.target.value });
+                      setEmployee({ ...employee, designation: e.target.value });
                     }}
+                    required
                   />
                 </div>
                 <div className="form-group">
@@ -137,27 +130,27 @@ const EditEmployee = () => {
                     id="city"
                     className="form-select"
                     onChange={(e) =>
-                      setUpdate({ ...update, city: e.target.value })
+                      setEmployee({ ...employee, city: e.target.value })
                     }
-                    value={update.city || ""}
+                    required
                   >
-                    <option selected disable value>
-                      --Select City--
-                    </option>
-                    <option>Yoyakarta</option>
-                    <option>Jakarta</option>
-                    <option>Serang</option>
-                    <option>Bandung</option>
-                    <option>Semarang</option>
-                    <option>Surabaya</option>
+                    {/* <option>--Select City--</option> */}
+                    <option value="Yogyakarta">Yoyakarta</option>
+                    <option value="Jakarta">Jakarta</option>
+                    <option value="Serang">Serang</option>
+                    <option value="Bandung">Bandung</option>
+                    <option value="Semarang">Semarang</option>
+                    <option value="Surabaya">Surabaya</option>
                   </select>
                 </div>
               </div>
-              <div className="card-footer text-end">
-                <Link to="/" className="btn btn-danger mx-2">
-                  Back
-                </Link>
-                <button className="btn btn-success">Update</button>
+              <div className="card-footer">
+                <input
+                  type="submit"
+                  value="Save"
+                  className="btn btn-success"
+                  style={{ width: "100%" }}
+                />
               </div>
             </div>
           </form>
@@ -167,4 +160,4 @@ const EditEmployee = () => {
   );
 };
 
-export default EditEmployee;
+export default AddEmployee;

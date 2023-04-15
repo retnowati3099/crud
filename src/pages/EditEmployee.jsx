@@ -1,10 +1,13 @@
 import axios from "axios";
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
-const AddEmployee = () => {
+const EditEmployee = () => {
+  //useParam react hook untuk mengakses parameter id route yang sesuai
+  const { id } = useParams();
+
   // deklarasi hook
-  const [employee, setEmployee] = useState({
+  const [update, setUpdate] = useState({
     name: "",
     email: "",
     phone: "",
@@ -16,25 +19,44 @@ const AddEmployee = () => {
   // useNavigate
   const nav = useNavigate();
 
-  // method post request untuk menambah data
-  const postRequest = () => {
+  // method get request untuk mengambil data dari json server
+  const getRequest = () => {
     axios
-      .post(`http://localhost:8080/employees`, employee)
+      .get(`http://localhost:8080/employees/${id}`)
+      //.get(`http://192.168.1.60:5000/employees/${id}`)
       .then((res) => {
-        console.log(res);
-        alert("The data has been successfully saved!");
+        setUpdate(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  // useEffect
+  useEffect(() => {
+    getRequest();
+    document.title = "Edit Employee";
+  }, [id]);
+
+  //method patch untuk mengupdate data
+  const patchRequest = () => {
+    axios
+      //.patch(`http://localhost:8080/employees/${id}`, update)
+      .put(`http://192.168.1.60:5000/employee/${id}`, update)
+      .then(() => {
+        alert("The data is updated!");
         nav("/");
       })
       .catch((err) => {
         console.log(err);
-        alert("The data failed to save!");
+        alert("The data is failed to be updated!");
       });
   };
 
   // handle submit
   const handleSubmit = (e) => {
     e.preventDefault();
-    postRequest();
+    patchRequest();
   };
 
   return (
@@ -44,18 +66,18 @@ const AddEmployee = () => {
           <form onSubmit={handleSubmit}>
             <div className="card">
               <div className="card-header">
-                <h2 className="text-center">Add Employee</h2>
+                <h2 className="text-center">Edit Employee</h2>
               </div>
               <div className="card-body">
                 <div className="form-group mb-3">
                   <label htmlFor="name">Name:</label>
                   <input
                     type="text"
-                    placeholder="Enter name"
+                    value={update.name || ""}
                     id="name"
                     className="form-control"
                     onChange={(e) =>
-                      setEmployee({ ...employee, name: e.target.value })
+                      setUpdate({ ...update, name: e.target.value })
                     }
                   />
                 </div>
@@ -63,11 +85,11 @@ const AddEmployee = () => {
                   <label htmlFor="email">Email:</label>
                   <input
                     type="text"
-                    placeholder="Enter email"
+                    value={update.email || ""}
                     id="email"
                     className="form-control"
                     onChange={(e) => {
-                      setEmployee({ ...employee, email: e.target.value });
+                      setUpdate({ ...update, email: e.target.value });
                     }}
                   />
                 </div>
@@ -75,11 +97,11 @@ const AddEmployee = () => {
                   <label htmlFor="phone">Phone:</label>
                   <input
                     type="text"
-                    placeholder="Enter phone"
+                    value={update.phone}
                     id="phone"
                     className="form-control"
                     onChange={(e) => {
-                      setEmployee({ ...employee, phone: e.target.value });
+                      setUpdate({ ...update, phone: e.target.value });
                     }}
                   />
                 </div>
@@ -89,10 +111,13 @@ const AddEmployee = () => {
                     id="gender"
                     className="form-select"
                     onChange={(e) =>
-                      setEmployee({ ...employee, gender: e.target.value })
+                      setUpdate({ ...update, gender: e.target.value })
                     }
+                    value={update.gender}
                   >
-                    <option selected disabled value>--Select Gender--</option>
+                    <option selected disabled value>
+                      --Select Gender--
+                    </option>
                     <option>Female</option>
                     <option>Male</option>
                   </select>
@@ -101,11 +126,11 @@ const AddEmployee = () => {
                   <label htmlFor="designation">Designation:</label>
                   <input
                     type="text"
-                    placeholder="Enter designation"
+                    value={update.designation || ""}
                     id="designation"
                     className="form-control"
                     onChange={(e) => {
-                      setEmployee({ ...employee, designation: e.target.value });
+                      setUpdate({ ...update, designation: e.target.value });
                     }}
                   />
                 </div>
@@ -115,10 +140,13 @@ const AddEmployee = () => {
                     id="city"
                     className="form-select"
                     onChange={(e) =>
-                      setEmployee({ ...employee, city: e.target.value })
+                      setUpdate({ ...update, city: e.target.value })
                     }
+                    value={update.city || ""}
                   >
-                    <option selected disable value>--Select City--</option>
+                    <option selected disable value>
+                      --Select City--
+                    </option>
                     <option>Yoyakarta</option>
                     <option>Jakarta</option>
                     <option>Serang</option>
@@ -128,13 +156,11 @@ const AddEmployee = () => {
                   </select>
                 </div>
               </div>
-              <div className="card-footer">
-                <input
-                  type="submit"
-                  value="Save"
-                  className="btn btn-success"
-                  style={{ width: "100%" }}
-                />
+              <div className="card-footer text-end">
+                <Link to="/" className="btn btn-danger mx-2">
+                  Back
+                </Link>
+                <button className="btn btn-success">Update</button>
               </div>
             </div>
           </form>
@@ -144,4 +170,4 @@ const AddEmployee = () => {
   );
 };
 
-export default AddEmployee;
+export default EditEmployee;
