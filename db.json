@@ -6,7 +6,7 @@
       "phone": "082314563738",
       "gender": "Female",
       "designation": "UI/UX Designer",
-      "city": "Bandung",
+      "city": "Yogyakarta",
       "id": 1
     },
     {
@@ -15,7 +15,7 @@
       "phone": "08234156786",
       "gender": "Female",
       "designation": "Project Manager",
-      "city": "Bandung",
+      "city": "Bogor",
       "id": 2
     },
     {
@@ -152,33 +152,6 @@
       "designation": "Nam cupiditate amet",
       "city": "Consequatur eaque qu",
       "id": 17
-    },
-    {
-      "name": "Praesentium id minus",
-      "email": "mihocidufu@mailinator.com",
-      "phone": "+1 (516) 931-7108",
-      "gender": "Female",
-      "designation": "Illo et dolor quia i",
-      "city": "Accusamus sed eius v",
-      "id": 18
-    },
-    {
-      "name": "Sunt quasi possimus",
-      "email": "logyryryw@mailinator.com",
-      "phone": "+1 (911) 499-2071",
-      "gender": "Male",
-      "designation": "Non voluptatem volu",
-      "city": "Consequat Nulla sun",
-      "id": 19
-    },
-    {
-      "name": "Qui ipsam ad ut iste",
-      "email": "damakis@mailinator.com",
-      "phone": "+1 (556) 538-9832",
-      "gender": "Male",
-      "designation": "Non vel ut temporibu",
-      "city": "Maiores est et non o",
-      "id": 20
     }
   ]
 }

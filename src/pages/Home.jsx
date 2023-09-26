@@ -34,8 +34,8 @@ function Home() {
     const confirm = window.confirm(`Do you really want to delete?`);
     if (confirm) {
       axios
-        //.delete(`http://localhost:8080/employees/${id}`)
-        .delete(`http://192.168.1.60:5000/employee/${id}`)
+        .delete(`http://localhost:8080/employees/${id}`)
+        // .delete(`http://192.168.1.60:5000/employee/${id}`)
         .then((res) => {
           alert("The data successed to delete!");
           setEmployee(employee.filter((person) => person.id !== id)); // mengupdate state employee dengan method filter
@@ -49,7 +49,7 @@ function Home() {
   };
 
   return (
-    <div className="container m-2 mx-auto">
+    <div className="container-full m-2 mx-auto">
       <h2 className="text-center">Employees Data</h2>
       <div className="my-3 d-flex justify-content-between">
         <div>
