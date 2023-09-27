@@ -1,0 +1,23 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Retno Wati",
+      "email": "retnowati3099@gmail.com",
+      "phoneNumber": "082314449263",
+      "jobPosition": "Software Engineer",
+      "gender": "female",
+      "address": "Yogyakarta"
+    },
+    {
+      "name": "Britanni Schultz",
+      "email": "quqizezyq@mailinator.com",
+      "phoneNumber": "+1 (598) 612-4042",
+      "jobPosition": "Aliquam architecto a",
+      "gender": "Male",
+      "address": "Dolore sed iure volu",
+      "password": "Pa$$w0rd!",
+      "id": 2
+    }
+  ]
+}
